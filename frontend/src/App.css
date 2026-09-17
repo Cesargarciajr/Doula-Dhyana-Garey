@@ -1,0 +1,165 @@
+/* Main App Styles */
+
+/* Button styles */
+.btn-primary {
+    @apply bg-[#A86A61] text-white hover:bg-[#8F5A52] rounded-full px-8 py-3 font-medium;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(168, 106, 97, 0.3);
+}
+
+.btn-secondary {
+    @apply bg-[#E5D0CC] text-[#2D2A2A] hover:bg-[#D4Beb9] rounded-full px-8 py-3 font-medium;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-outline {
+    @apply border-2 border-[#A86A61] text-[#A86A61] hover:bg-[#A86A61] hover:text-white rounded-full px-8 py-3 font-medium;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Card styles */
+.card-service {
+    @apply bg-white p-8 rounded-2xl border border-[#F5F2F0];
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-service:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    transform: translateY(-4px);
+}
+
+.card-testimonial {
+    @apply bg-[#F5F2F0] p-8 rounded-2xl italic relative;
+}
+
+/* Section styles */
+.section-padding {
+    @apply py-20 md:py-32 px-6 md:px-12;
+}
+
+/* Toggle item for birth plan */
+.toggle-item {
+    @apply flex items-center justify-between p-4 rounded-lg cursor-pointer border border-transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.toggle-item:hover {
+    @apply bg-[#FAFAF9] border-[#E5D0CC];
+}
+
+.toggle-item.selected {
+    @apply bg-[#E5D0CC]/30 border-[#A86A61];
+}
+
+/* Progress bar */
+.progress-container {
+    @apply h-4 rounded-full bg-[#E5D0CC] overflow-hidden;
+}
+
+.progress-bar {
+    @apply h-full bg-[#A86A61];
+    transition: width 0.5s ease-out;
+}
+
+/* Category container */
+.category-container {
+    @apply bg-white p-6 rounded-xl border border-gray-100 shadow-sm;
+}
+
+/* Tooltip styles */
+.tooltip-content {
+    @apply bg-[#2D2A2A] text-white text-sm p-3 rounded-lg max-w-xs;
+}
+
+/* Hero gradient background */
+.hero-gradient {
+    background: linear-gradient(135deg, #FDFBFB 0%, #E5D0CC 100%);
+}
+
+/* Glass morphism effect */
+.glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Text gradient */
+.text-gradient {
+    background: linear-gradient(135deg, #A86A61 0%, #8F5A52 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Admin sidebar */
+.admin-sidebar {
+    @apply bg-white border-r border-[#F5F2F0] h-screen w-64 fixed left-0 top-0;
+}
+
+/* Admin main content */
+.admin-content {
+    @apply ml-64 p-8 min-h-screen bg-[#FAFAF9];
+}
+
+/* Mobile responsive admin */
+@media (max-width: 768px) {
+    .admin-sidebar {
+        @apply w-full h-auto relative;
+    }
+    .admin-content {
+        @apply ml-0;
+    }
+}
+
+/* Form input focus states */
+input:focus, textarea:focus, select:focus {
+    @apply outline-none ring-2 ring-[#A86A61]/30 border-[#A86A61];
+}
+
+/* Link hover effect */
+.link-hover {
+    position: relative;
+}
+
+.link-hover::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #A86A61;
+    transition: width 0.3s ease;
+}
+
+.link-hover:hover::after {
+    width: 100%;
+}
+
+/* Loading spinner */
+.spinner {
+    @apply w-8 h-8 border-4 border-[#E5D0CC] border-t-[#A86A61] rounded-full;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Mobile navigation */
+.mobile-nav {
+    @apply fixed inset-0 bg-white z-50;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav.open {
+    transform: translateX(0);
+}

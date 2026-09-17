@@ -1,0 +1,40 @@
+{
+  "summary": "Completed testing of birth plan token info endpoint and edit button visibility fix. All key features working correctly.",
+  "backend_issues": {
+    "critical_bugs": [],
+    "flaky_endpoints": [],
+    "non_critical_issues": [
+      {
+        "endpoint": "/api/birth-plan/{plan_id}/reset",
+        "issue": "Reset fails when token has no remaining uses",
+        "impact": "Expected behavior - correctly prevents editing when no uses remain",
+        "fix_priority": "NONE",
+        "note": "This is working as designed"
+      }
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "passed_tests": [
+    "GET /api/birth-plan/{plan_id}/token-info returns correct token data",
+    "Token validation with test token 'edit123' works correctly",
+    "Birth plan access via direct URL works",
+    "Edit button correctly hidden when remaining_uses = 0",
+    "Token entry page loads and validation flow works",
+    "Birth plan update functionality works",
+    "Error handling for invalid tokens and plan IDs",
+    "Public endpoints (categories, options) working"
+  ],
+  "test_report_links": ["/app/backend_test.py"],
+  "success_percentage": {
+    "backend": "90%",
+    "frontend": "100%"
+  },
+  "updated_files": ["/app/backend_test.py"],
+  "action_item_for_main_agent": "",
+  "should_call_test_agent_after_fix": "false",
+  "should_main_agent_test_itself": "true"
+}
