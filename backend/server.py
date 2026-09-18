@@ -1025,10 +1025,16 @@ async def root():
 # Include the router in the main app
 app.include_router(api_router)
 
+cors_origins_env = os.environ.get('CORS_ORIGINS', '')
+if cors_origins_env:
+    cors_origins = [origin.strip() for origin in cors_origins_env.split(',')]
+else:
+    cors_origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_credentials=True if cors_origins_env else False,
+    allow_origins=cors_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
